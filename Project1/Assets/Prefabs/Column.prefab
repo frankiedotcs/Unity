@@ -55,7 +55,8 @@ GameObject:
   - component: {fileID: 4062645716215090}
   - component: {fileID: 95370420341647868}
   - component: {fileID: 65699681681159494}
-  m_Layer: 0
+  - component: {fileID: 208642915798037980}
+  m_Layer: 10
   m_Name: Column
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,3 +287,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!208 &208642915798037980
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1568800750536574}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.035, y: 2.135, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.3, z: 0}
+  m_TimeToStationary: 0.5

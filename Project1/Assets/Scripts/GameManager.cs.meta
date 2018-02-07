@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: 52b74f10e6d1ce741874531e432f7202
-timeCreated: 1517449052
+timeCreated: 1518043646
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - alien: {instanceID: 0}
+  - upgradePrefab: {fileID: 105092, guid: 941d6224549424c91b1cf112b44ec0cb, type: 2}
+  - gun: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

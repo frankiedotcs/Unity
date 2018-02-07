@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour {
     public float moveSpeed = 50.0f; //the movement speed
     public Rigidbody head; //controls the head
     public LayerMask layerMask; //the layer mask for the ray
+    public Animator bodyAnimator;
     /// <summary>
     /// private variables
     /// </summary>
@@ -43,11 +44,12 @@ public class PlayerController : MonoBehaviour {
 
         if (moveDirection == Vector3.zero)
         {
-
+            bodyAnimator.SetBool("IsMoving", false);//sets the animator for the legs
         }
         else
         {
             head.AddForce(transform.right * 150, ForceMode.Acceleration); //adds force to the head
+            bodyAnimator.SetBool("IsMoving", true); //sets the animator for the legs
         }
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

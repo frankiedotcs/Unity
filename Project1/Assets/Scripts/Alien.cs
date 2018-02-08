@@ -13,12 +13,15 @@ public class Alien : MonoBehaviour {
     public Transform target;
     public float navigationUpdate;
     public UnityEvent OnDestroy;
+    public Rigidbody head;
+    public bool isAlive = true;
 
     /// <summary>
     /// private variables
     /// </summary>
     private NavMeshAgent agent;
     private float navigationTime = 0;
+    private DeathParticles deathParticles;
 	
     // Use this for initialization
 	void Start () {
@@ -28,26 +31,55 @@ public class Alien : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        agent.destination = target.position;
-
+        
+        navigationTime += Time.deltaTime;
         if (navigationTime > navigationUpdate)
         {
-            agent.destination = target.position;
+            if (target != null)
+            {
+                agent.destination = target.position;
+            }
             navigationTime = 0;
         }
 	}
 
     void OnTriggerEnter(Collider other)
     {
-        Die();
-        SoundManager.Instance.PlayOneShot(SoundManager.Instance.alienDeath);
+        if (isAlive) { 
+            Die();
+            SoundManager.Instance.PlayOneShot(SoundManager.Instance.alienDeath);
+        }
 
     }
 
     public void Die()
     {
+        isAlive = false;
+        head.GetComponent<Animator>().enabled = false;
+        head.isKinematic = false;
+        head.useGravity = true;
+        head.GetComponent<SphereCollider>().enabled = true;
+        head.gameObject.transform.parent = null;
+        head.velocity = new Vector3(0, 26.0f, 3.0f);
+
         OnDestroy.Invoke();
         OnDestroy.RemoveAllListeners();
+        SoundManager.Instance.PlayOneShot(SoundManager.Instance.alienDeath);
+        head.GetComponent<SelfDestruct>().Initiate();
+        if (deathParticles)
+        {
+            deathParticles.transform.parent = null;
+            deathParticles.Activate();
+        }
         Destroy(gameObject);
+    }
+
+    public DeathParticles GetDeathParticles()
+    {
+        if(deathParticles == null)
+        {
+            deathParticles = GetComponentInChildren<DeathParticles>();
+        }
+        return deathParticles;
     }
 }

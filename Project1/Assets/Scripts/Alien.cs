@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Alien : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class Alien : MonoBehaviour {
     /// 
     public Transform target;
     public float navigationUpdate;
+    public UnityEvent OnDestroy;
 
     /// <summary>
     /// private variables
@@ -37,8 +39,15 @@ public class Alien : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        Die();
         SoundManager.Instance.PlayOneShot(SoundManager.Instance.alienDeath);
 
+    }
+
+    public void Die()
+    {
+        OnDestroy.Invoke();
+        OnDestroy.RemoveAllListeners();
+        Destroy(gameObject);
     }
 }

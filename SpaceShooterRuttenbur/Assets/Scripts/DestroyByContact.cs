@@ -1,7 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Destroy By Contact 
+/// Allows you to control the collider functions
+/// Liz "Frankie" Ruttenbur
+/// </summary>
 public class DestroyByContact : MonoBehaviour {
 
     public GameObject explosion;

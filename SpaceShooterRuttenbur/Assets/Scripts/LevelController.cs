@@ -25,7 +25,7 @@ public class LevelController : MonoBehaviour
 
         enemiesDestroyed = 0;
         bossDestroyed = false;
-        activeScene = "Menu";
+        activeScene = "spaceshooter";
         score = 0;
         upgradesLeft = 2;
         playerPos = new Vector3(0f, 0f, 0f);

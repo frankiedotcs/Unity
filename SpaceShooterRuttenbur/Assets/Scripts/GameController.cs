@@ -50,8 +50,6 @@ public class GameController : MonoBehaviour {
         restart = false;
         restartText.text = "";
         gameOverText.text = "";
-        upgradeText.text = "";
-
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
@@ -64,13 +62,7 @@ public class GameController : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                score = 0;
-                bossDestroyed = false;
-                enemiesDestroyed = 0;
-                restartText.text = "";
-                gameOverText.text = "";
-                upgradeText.text = "";
-                SceneManager.LoadScene("spaceshooter");
+               SceneManager.LoadScene("spaceshooter");
             }
         }
         else if(enemiesDestroyed >= totalEnemies)
@@ -81,22 +73,10 @@ public class GameController : MonoBehaviour {
         {
             timeElapsed += Time.deltaTime;
             gameOverText.text = "YOU WIN!";
-            if (timeElapsed >= delayBeforeLoading)
-            {
-                SceneManager.LoadScene("Score");
-            }
-
-       
+            SceneManager.LoadScene("Score");
         }
-        else
-        {
-            timeElapsed += Time.deltaTime;
-            if (timeElapsed >= delayBeforeLoading)
-            {
-                SceneManager.LoadScene("Score");
-            }
-            
-        }
+           
+        
     }
 
     IEnumerator SpawnWaves()

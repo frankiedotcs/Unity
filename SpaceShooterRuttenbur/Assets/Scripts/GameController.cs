@@ -64,12 +64,18 @@ public class GameController : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
+                score = 0;
+                bossDestroyed = false;
+                enemiesDestroyed = 0;
+                restartText.text = "";
+                gameOverText.text = "";
+                upgradeText.text = "";
                 SceneManager.LoadScene("spaceshooter");
             }
         }
         else if(enemiesDestroyed >= totalEnemies)
         {
-            SceneManager.LoadScene("Boss");
+            SceneManager.LoadScene("BossLevel");
         }
         else if (bossDestroyed)
         {
@@ -81,6 +87,15 @@ public class GameController : MonoBehaviour {
             }
 
        
+        }
+        else
+        {
+            timeElapsed += Time.deltaTime;
+            if (timeElapsed >= delayBeforeLoading)
+            {
+                SceneManager.LoadScene("Score");
+            }
+            
         }
     }
 
@@ -125,12 +140,12 @@ public class GameController : MonoBehaviour {
         gameOver = true;
     }
 
-    public void SaveState()
+    public void SaveLevel()
     {
-        StateController.State.EnemyDestroyed = enemiesDestroyed;
-        StateController.State.BossDestroyed = bossDestroyed;
-        StateController.State.Score = score;
-        StateController.State.UpgradeLeft = player.GetComponent<PlayerController>().upgradesLeft;
-        StateController.State.PlayerPos = player.transform.position;
+        LevelController.Level.EnemyDestroyed = enemiesDestroyed;
+        LevelController.Level.BossDestroyed = bossDestroyed;
+        LevelController.Level.Score = score;
+        LevelController.Level.UpgradeLeft = player.GetComponent<PlayerController>().upgradesLeft;
+        LevelController.Level.PlayerPos = player.transform.position;
     }
 }

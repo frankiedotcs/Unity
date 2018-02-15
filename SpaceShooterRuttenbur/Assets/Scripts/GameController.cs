@@ -9,6 +9,11 @@ using UnityEngine.UI;
 /// </summary>
 public class GameController : MonoBehaviour {
 
+    /// <summary>
+    /// public variables
+    /// </summary>
+    /// 
+    public GameObject player;
     public GameObject[] hazards;
     public Vector3 spawnValues;
     public int hazardCount;
@@ -18,43 +23,67 @@ public class GameController : MonoBehaviour {
     public Text restartText;
     public Text gameOverText;
     public Text scoreText;
+    public Text upgradeText;
+    public int totalEnemies = 15;
+    public bool bossDestroyed;
+
+    /// <summary>
+    /// private variables
+    /// </summary>
     private bool gameOver;
     private bool restart;
-
     private int score;
-    /// <summary>
-    /// updates and gets things going for the start of the game
-    /// </summary>
+    private int enemiesDestroyed = 0;
+    private float delayBeforeLoading = 5.0f;
+    private float timeElapsed;
+    
+    public int EnemyDestroyed
+    {
+        get { return enemiesDestroyed; }
+        set { enemiesDestroyed = value; }
+    }
+    
     void Start()
     {
-        score = 0;
-        UpdateScore();
+
         gameOver = false;
         restart = false;
         restartText.text = "";
         gameOverText.text = "";
-        StartCoroutine(SpawnWaves()); //calls the spawn waves
-        
+        upgradeText.text = "";
+
+        score = 0;
+        UpdateScore();
+        StartCoroutine(SpawnWaves());
     }
-    /// <summary>
-    /// the update function
-    /// that houses the restart ability for the game
-    /// </summary>
+
     void Update()
     {
+
         if (restart)
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene("spaceshooter");
             }
+        }
+        else if(enemiesDestroyed >= totalEnemies)
+        {
+            SceneManager.LoadScene("Boss");
+        }
+        else if (bossDestroyed)
+        {
+            timeElapsed += Time.deltaTime;
+            gameOverText.text = "YOU WIN!";
+            if (timeElapsed >= delayBeforeLoading)
+            {
+                SceneManager.LoadScene("Score");
+            }
+
+       
         }
     }
 
-    /// <summary>
-    /// Spawns the waves of hazards
-    /// </summary>
-    /// <returns></returns>
     IEnumerator SpawnWaves()
     {
         yield return new WaitForSeconds(startWait);
@@ -79,32 +108,29 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// Adds the score together
-    /// and updates it
-    /// </summary>
-    /// <param name="newScoreValue"></param>
     public void AddScore(int newScoreValue)
     {
         score += newScoreValue;
         UpdateScore();
     }
 
-    /// <summary>
-    /// Updates the score text
-    /// </summary>
     void UpdateScore()
     {
         scoreText.text = "Score: " + score;
     }
-    /// <summary>
-    /// updates the game over text
-    /// and sets the bool value to true 
-    /// breaking through the endless cycle.
-    /// </summary>
+
     public void GameOver()
     {
         gameOverText.text = "Game Over!";
         gameOver = true;
+    }
+
+    public void SaveState()
+    {
+        StateController.State.EnemyDestroyed = enemiesDestroyed;
+        StateController.State.BossDestroyed = bossDestroyed;
+        StateController.State.Score = score;
+        StateController.State.UpgradeLeft = player.GetComponent<PlayerController>().upgradesLeft;
+        StateController.State.PlayerPos = player.transform.position;
     }
 }

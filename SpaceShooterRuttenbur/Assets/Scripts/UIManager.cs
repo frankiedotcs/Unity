@@ -4,16 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
-    /// <summary>
-    /// public variables
-    /// </summary>
-    /// 
-    public Animator settingsButton;
-
-    public void OpenSettings()
-    {
-        settingsButton.SetBool("SettingsPressed", true);
-    }
 
     public void StartGame()
     {
@@ -22,8 +12,8 @@ public class UIManager : MonoBehaviour {
     
 	public void QuitGame()
     {
-        //Application.Quit();
+        Application.Quit();
         //use below for testing!
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }

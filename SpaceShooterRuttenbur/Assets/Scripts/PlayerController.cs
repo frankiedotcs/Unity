@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-/// <summary>
-/// New public boundary class
-/// that holds values for position for boundaries
-/// </summary>
 [System.Serializable]
+
 public class Boundary
 {
     public float xMin, xMax, zMin, zMax;
@@ -16,16 +14,26 @@ public class Boundary
 /// the space shooter game
 /// Liz "Frankie" Ruttenbur
 /// </summary>
-public class PlayerController : MonoBehaviour {
+/// 
 
+public class PlayerController : MonoBehaviour {
+    public Text upgradeText;
     public float speed = 100; //speed for the movement of player
     public Boundary boundary; //the boundary class so you can use the boundary variables in this class
     public float tilt; //the tilt for the player movement
     private Rigidbody rb; //rigid body component
     public GameObject shot; //the shot
     public Transform shotSpawn; //the transform position of the shot
+
     public float fireRate;
     private float nextFire;
+    public bool rapidFire = false;
+    public float fastFire;
+    private float upgradeTime = 10f;
+    public int upgradesLeft = 2;
+    public bool quickMove;
+    private float currentRapidFireTime = 0.0f;
+    private float holdPress;
 
     /// <summary>
     /// start gets the rigidbody component and sets it to rb
@@ -33,21 +41,71 @@ public class PlayerController : MonoBehaviour {
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+
     }
-    /// <summary>
-    /// the update function sets the fire rate and the spawn shot stuff
-    /// plays the audio
-    /// </summary>
+ 
     void Update()
     {
+        if (rapidFire)
+        {
+            fireRate = 0.1f;
+            upgradeText.text = "RAPID FIRE ENABLED!";
+        }
+        else if (quickMove)
+        {
+            speed = 20f;
+            upgradeText.text = "SPEED INCREASED!";
+        }
+        else if (rapidFire && quickMove)
+        {
+            upgradeText.text = "RAPID FIRE ENABLED AND SPEED INCREASED!";
+        }
+
+        if (!rapidFire)
+        {
+            currentRapidFireTime = 0.0f;
+        }
+
+        
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
-            nextFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-            GetComponent<AudioSource>().Play();
+
+            holdPress += Time.deltaTime;
+
+            
+            if (holdPress >= 3.0f && upgradesLeft != 0)
+            {
+                nextFire = Time.time + fireRate;
+                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                upgradesLeft--;
+                holdPress = 0.0f;
+               
+            }
+            else
+            {
+                nextFire = Time.time + fireRate;
+                Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            }
+
+           
         }
+
+        
+        if (currentRapidFireTime >= upgradeTime && rapidFire)
+        {
+            fireRate = 0.25f;
+            currentRapidFireTime = 0.0f;
+            rapidFire = false;
+            upgradeText.text = "";
+
+            
+        }
+      
+
+        currentRapidFireTime += Time.deltaTime;
+       
     }
+
     /// <summary>
     /// Update is called once per frame
     ///handles the physics

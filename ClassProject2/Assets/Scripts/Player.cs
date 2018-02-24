@@ -39,7 +39,7 @@ public class Player : MonoBehaviour {
             armor = 0;
         }
         health -= healthDamage;
-        Debug.Log("Health is" + health);
+        Debug.Log("Health is " + health);
 
         if (health <= 0)
         {
@@ -50,9 +50,11 @@ public class Player : MonoBehaviour {
     private void pickupHealth()
     {
         health += 50;
+        Debug.Log("Your health is now " + health);
         if (health > 200)
         {
             health = 200;
+            Debug.Log("Your health is now " + health);
         }
 
     }
@@ -60,21 +62,25 @@ public class Player : MonoBehaviour {
     private void pickupArmor()
     {
         armor += 15;
+        Debug.Log("Your armor is now " + armor);
     }
 
     private void pickupAssaultRifleAmmo()
     {
         ammo.AddAmmo(Constants.AssaultRifle, 50);
+        Debug.Log("50 Added to your Assault Rifle ammo!");
     }
 
     private void pickupPistolAmmo()
     {
         ammo.AddAmmo(Constants.Pistol, 20);
+        Debug.Log("20 Added to your pistol ammo!");
     }
 
     private void pickupShotgunAmmo()
     {
         ammo.AddAmmo(Constants.Shotgun, 10);
+        Debug.Log("10 Added to your Shotgun ammo!");
     }
 
     public void PickUpItem(int pickupType)

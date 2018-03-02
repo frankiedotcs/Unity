@@ -75,7 +75,15 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 1000, Color.green);
-
+   if (Physics.Raycast(ray, out hit, 1000, layerMask, QueryTriggerInteraction.Ignore))
+        {
+            //gets target position for the space marine
+            Vector3 targetPosition = new Vector3(hit.point.x, transform.position.y, hit.point.z);
+            //used to determine the marines rotation which turns the marine
+            Quaternion rotation = Quaternion.LookRotation(targetPosition - transform.position);
+            //makes the actual turn
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * 10.0f);
+        }
         if (Physics.Raycast(ray, out hit, 1000, layerMask, QueryTriggerInteraction.Ignore))
         {
             //gets target position for the space marine

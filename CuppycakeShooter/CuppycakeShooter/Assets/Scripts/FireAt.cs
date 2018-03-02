@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FireAt : MonoBehaviour {
+
     public Rigidbody cake;
     public Rigidbody bullet;
     public float force = 10.0f;
@@ -19,6 +20,7 @@ public class FireAt : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0))
         {
+            
             Rigidbody instance = Instantiate(cake, transform.position, transform.rotation) as Rigidbody;
             instance.AddForce(transform.forward * force, forceMode);
         }

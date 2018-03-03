@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
-{
+public class CharacterController : MonoBehaviour {
+
 
     public float moveSpeed = 50.0f; //the movement speed
-    
+
     public float force = 10.0f;
 
     private CapsuleCollider collide; //the chracter controller for movment and physics
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
         translation *= Time.deltaTime;
         straffe *= Time.deltaTime;
         transform.Translate(straffe, 0, translation);
-        
+
 
         if (Input.GetKeyDown("escape"))
         {
@@ -34,5 +34,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-  
 }

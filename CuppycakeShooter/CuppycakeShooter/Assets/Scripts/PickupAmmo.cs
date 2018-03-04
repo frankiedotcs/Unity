@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickupAmmo : MonoBehaviour {
     public int type;
     public AudioClip pickup;
+    FireBullets fireBullets;
 
     // Use this for initialization
     void Start () {
@@ -23,6 +24,10 @@ public class PickupAmmo : MonoBehaviour {
         {
             GetComponent<AudioSource>().PlayOneShot(pickup);
             collider.gameObject.GetComponent<Bullets>().PickUpItem(type);
+            
+
+            
+            
         }
     }
 

@@ -9,6 +9,9 @@ TagManager:
   - Plate
   - Bullet
   - Cake
+  - Pickup
+  - Beer
+  - Pig
   layers:
   - Default
   - TransparentFX

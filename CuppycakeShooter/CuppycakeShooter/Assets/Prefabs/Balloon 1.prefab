@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4558108258128924}
   m_Layer: 0
   m_Name: Balloon 1
-  m_TagString: Balloon
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 82160020201769780}
   m_Layer: 0
   m_Name: balloon main
-  m_TagString: Balloon
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -211,8 +211,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 84ba7832d753c4641b006fd53eff7fdd, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -294,7 +294,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pop: {fileID: 1902421473804826, guid: 13a4af23e68891d4f920c4921dadcc3a, type: 2}
-  popping: {fileID: 8300000, guid: 84ba7832d753c4641b006fd53eff7fdd, type: 3}
 --- !u!136 &136351264061696770
 CapsuleCollider:
   m_ObjectHideFlags: 1

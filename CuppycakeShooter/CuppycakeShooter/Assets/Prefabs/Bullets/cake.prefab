@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 136733096076536958}
   - component: {fileID: 114507288227913146}
   - component: {fileID: 114817482009240750}
+  - component: {fileID: 82287358597001710}
   m_Layer: 0
   m_Name: cake
   m_TagString: Cake
@@ -202,6 +203,86 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &82287358597001710
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743698538955638}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114507288227913146
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,9 +294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb555c774bcfec4d8bba4fef4044044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cakeAmmo: 13
-  beerAmmo: 6
-  pigAmmo: 1
+  cakeAmmo: 3
+  beerAmmo: 1
+  pigAmmo: 2
 --- !u!114 &114817482009240750
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,6 +308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d48ebbac1af0cfb45a22c66e74f108f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cakeAmmo: {fileID: 54188393918627360}
+  beerAmmo: {fileID: 54285505043029566, guid: 1377c338f171dd646a9a99855c397b9d, type: 2}
+  pigAmmo: {fileID: 54226740483707094, guid: 3669d65de973cbe44860ecd9180e3d42, type: 2}
+  popping: {fileID: 8300000, guid: bc3f79aa976ad4b4db5b175e859e4592, type: 3}
 --- !u!136 &136733096076536958
 CapsuleCollider:
   m_ObjectHideFlags: 1

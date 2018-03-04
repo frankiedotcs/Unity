@@ -13,8 +13,8 @@ public class Constants : MonoBehaviour {
     public const string BeerBottle = "beer";
     public const string PigBullet = "pig";
     // Bullet Types   
-    public const int CakeAmmo = 0;
-    public const int RubbahBullet = 3;
+    public const int CakeAmmo = 3;
+    public const int RubbahBullet = 0;
     public const int Beer = 2;
     public const int Pig = 1;
     

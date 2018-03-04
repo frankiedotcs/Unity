@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ammo : MonoBehaviour {
-    
+
+public class Ammo : MonoBehaviour
+{
+
     [SerializeField]
     private int cakeAmmo = 13;
     [SerializeField]
@@ -62,8 +64,8 @@ public class Ammo : MonoBehaviour {
 
         tagToAmmo[tag]--;
     }
-    
-        void Start()
+
+    void Start()
     {
 
     }

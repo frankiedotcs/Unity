@@ -9,49 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1734115631193328}
+  m_RootGameObject: {fileID: 1805894828521372}
   m_IsPrefabParent: 1
---- !u!1 &1734115631193328
+--- !u!1 &1805894828521372
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4257295492798504}
-  - component: {fileID: 33624043406942480}
-  - component: {fileID: 135761253402892678}
-  - component: {fileID: 23505868967236908}
-  - component: {fileID: 54959401613829960}
-  - component: {fileID: 114960797872902838}
-  - component: {fileID: 114978485853753192}
-  - component: {fileID: 82241426030584984}
+  - component: {fileID: 4785735359095902}
+  - component: {fileID: 33580459111944682}
+  - component: {fileID: 23043265470246060}
+  - component: {fileID: 54285505043029566}
+  - component: {fileID: 136560261572661652}
+  - component: {fileID: 114670871105312204}
+  - component: {fileID: 114818421216246972}
+  - component: {fileID: 82074954746556474}
   m_Layer: 0
-  m_Name: bullet
-  m_TagString: Bullet
+  m_Name: beerBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4257295492798504
+--- !u!4 &4785735359095902
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734115631193328}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.7, z: 1.282}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_GameObject: {fileID: 1805894828521372}
+  m_LocalRotation: {x: 0.000000021855694, y: 3.2567517e-16, z: 0.000000014901159,
+    w: 1}
+  m_LocalPosition: {x: 0, y: 0.165, z: 1.474}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23505868967236908
+--- !u!23 &23043265470246060
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734115631193328}
+  m_GameObject: {fileID: 1805894828521372}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +61,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a03a699e92f2f7146aa057af39e384ee, type: 2}
+  - {fileID: 2100000, guid: c3e44f030d4da21408a2446c9cf9affd, type: 2}
+  - {fileID: 2100000, guid: ccd50f9ede6dcd14fa6e66c1b9d33e3f, type: 2}
+  - {fileID: 2100000, guid: fac1b2826346fc44e8f355514543a061, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -68,7 +71,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -80,19 +83,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33624043406942480
+--- !u!33 &33580459111944682
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734115631193328}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54959401613829960
+  m_GameObject: {fileID: 1805894828521372}
+  m_Mesh: {fileID: 4300000, guid: b251ff43c582fc546bebe85e70f68b3e, type: 3}
+--- !u!54 &54285505043029566
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734115631193328}
+  m_GameObject: {fileID: 1805894828521372}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -102,12 +105,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &82241426030584984
+--- !u!82 &82074954746556474
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734115631193328}
+  m_GameObject: {fileID: 1805894828521372}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -182,12 +185,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114960797872902838
+--- !u!114 &114670871105312204
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734115631193328}
+  m_GameObject: {fileID: 1805894828521372}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bb555c774bcfec4d8bba4fef4044044, type: 3}
@@ -196,30 +199,31 @@ MonoBehaviour:
   cakeAmmo: 3
   beerAmmo: 1
   pigAmmo: 2
---- !u!114 &114978485853753192
+--- !u!114 &114818421216246972
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734115631193328}
+  m_GameObject: {fileID: 1805894828521372}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d48ebbac1af0cfb45a22c66e74f108f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cakeAmmo: {fileID: 54188393918627360, guid: 5dfb577235bfb4046b1e6fae03f20986, type: 2}
-  beerAmmo: {fileID: 54285505043029566, guid: 1377c338f171dd646a9a99855c397b9d, type: 2}
+  beerAmmo: {fileID: 54285505043029566}
   pigAmmo: {fileID: 54226740483707094, guid: 3669d65de973cbe44860ecd9180e3d42, type: 2}
-  popping: {fileID: 8300000, guid: 84ba7832d753c4641b006fd53eff7fdd, type: 3}
---- !u!135 &135761253402892678
-SphereCollider:
+  popping: {fileID: 8300000, guid: b4ed406e6e315450f85fa2c0f65bce01, type: 3}
+--- !u!136 &136560261572661652
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1734115631193328}
+  m_GameObject: {fileID: 1805894828521372}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.045961738
+  m_Height: 0.26578882
+  m_Direction: 1
+  m_Center: {x: -0.0000000018626451, y: 0.0000117868185, z: 0.0000000055879354}

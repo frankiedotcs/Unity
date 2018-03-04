@@ -193,7 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pop: {fileID: 1756550560708190, guid: b9447a1f2d1eeb540abab2b5d492027b, type: 2}
-  popping: {fileID: 8300000, guid: bc3f79aa976ad4b4db5b175e859e4592, type: 3}
+  bullet: {fileID: 0}
+  popping: {fileID: 0}
 --- !u!135 &135550732867960878
 SphereCollider:
   m_ObjectHideFlags: 1

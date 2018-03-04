@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4785735359095902}
   - component: {fileID: 33580459111944682}
   - component: {fileID: 23043265470246060}
+  - component: {fileID: 114160189332554720}
   - component: {fileID: 54285505043029566}
   - component: {fileID: 136560261572661652}
   - component: {fileID: 114670871105312204}
@@ -185,6 +186,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114160189332554720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1805894828521372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328399bf04d3f404096da1fb37369e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popping: {fileID: 8300000, guid: 8904096a3646d43fd88ea2a4d254fa10, type: 3}
 --- !u!114 &114670871105312204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,7 +226,7 @@ MonoBehaviour:
   cakeAmmo: {fileID: 54188393918627360, guid: 5dfb577235bfb4046b1e6fae03f20986, type: 2}
   beerAmmo: {fileID: 54285505043029566}
   pigAmmo: {fileID: 54226740483707094, guid: 3669d65de973cbe44860ecd9180e3d42, type: 2}
-  popping: {fileID: 8300000, guid: b4ed406e6e315450f85fa2c0f65bce01, type: 3}
+  popping: {fileID: 8300000, guid: 8904096a3646d43fd88ea2a4d254fa10, type: 3}
 --- !u!136 &136560261572661652
 CapsuleCollider:
   m_ObjectHideFlags: 1

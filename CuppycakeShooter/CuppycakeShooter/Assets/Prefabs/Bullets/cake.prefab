@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 54188393918627360}
   - component: {fileID: 136733096076536958}
   - component: {fileID: 114507288227913146}
+  - component: {fileID: 114759471635089250}
   - component: {fileID: 114817482009240750}
   - component: {fileID: 82287358597001710}
   m_Layer: 0
@@ -297,6 +298,17 @@ MonoBehaviour:
   cakeAmmo: 3
   beerAmmo: 1
   pigAmmo: 2
+--- !u!114 &114759471635089250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743698538955638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328399bf04d3f404096da1fb37369e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114817482009240750
 MonoBehaviour:
   m_ObjectHideFlags: 1

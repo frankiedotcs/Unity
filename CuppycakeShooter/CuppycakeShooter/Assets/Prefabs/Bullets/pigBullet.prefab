@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 54226740483707094}
   - component: {fileID: 135129320978182660}
   - component: {fileID: 82899566563193040}
+  - component: {fileID: 114489449175388492}
   m_Layer: 0
   m_Name: pigBullet
   m_TagString: Bullet
@@ -182,6 +183,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114489449175388492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1315037530910114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328399bf04d3f404096da1fb37369e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popping: {fileID: 8300000, guid: 4a46782b6a4544fa089a35523f50e2a0, type: 3}
 --- !u!114 &114672472124621184
 MonoBehaviour:
   m_ObjectHideFlags: 1

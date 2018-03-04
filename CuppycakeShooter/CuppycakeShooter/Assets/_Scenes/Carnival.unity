@@ -252,10 +252,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 184450903}
+  - component: {fileID: 184450907}
   - component: {fileID: 184450906}
   - component: {fileID: 184450905}
   - component: {fileID: 184450904}
-  - component: {fileID: 184450908}
   - component: {fileID: 184450909}
   m_Layer: 0
   m_Name: Main Camera
@@ -327,7 +327,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &184450908
+--- !u!114 &184450907
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -341,9 +341,12 @@ MonoBehaviour:
   shoot: {fileID: 8300000, guid: 68afba37b0add4662b322912a5e54259, type: 3}
   bulletType: {fileID: 54959401613829960, guid: ccdea2255f080354d9db2cd284663788,
     type: 2}
+  pigAmmo: {fileID: 54226740483707094, guid: 3669d65de973cbe44860ecd9180e3d42, type: 2}
+  cakeAmmo: {fileID: 54188393918627360, guid: 5dfb577235bfb4046b1e6fae03f20986, type: 2}
+  beerAmmo: {fileID: 54285505043029566, guid: 1377c338f171dd646a9a99855c397b9d, type: 2}
   force: 25
   forceMode: 2
-  sensitivity: 5
+  sensitivity: 3
   smoothing: 2
 --- !u!82 &184450909
 AudioSource:
@@ -369,7 +372,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -1834,6 +1837,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &781543970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 781543965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48ebbac1af0cfb45a22c66e74f108f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cakeAmmo: {fileID: 0}
+  beerAmmo: {fileID: 0}
+  pigAmmo: {fileID: 54226740483707094, guid: 3669d65de973cbe44860ecd9180e3d42, type: 2}
+  popping: {fileID: 0}
 --- !u!4 &781543971 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4105886225802320, guid: 0f1a91f0bb3d8d3429a91e85f923157c,
@@ -4592,6 +4610,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &1917314062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1917314056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48ebbac1af0cfb45a22c66e74f108f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cakeAmmo: {fileID: 54188393918627360, guid: 5dfb577235bfb4046b1e6fae03f20986, type: 2}
+  beerAmmo: {fileID: 0}
+  pigAmmo: {fileID: 0}
+  popping: {fileID: 0}
 --- !u!1001 &1971487592
 Prefab:
   m_ObjectHideFlags: 0
@@ -4908,6 +4941,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &2017017877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2017017872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48ebbac1af0cfb45a22c66e74f108f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cakeAmmo: {fileID: 0}
+  beerAmmo: {fileID: 54285505043029566, guid: 1377c338f171dd646a9a99855c397b9d, type: 2}
+  pigAmmo: {fileID: 0}
+  popping: {fileID: 0}
 --- !u!4 &2017017878 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: b251ff43c582fc546bebe85e70f68b3e, type: 3}

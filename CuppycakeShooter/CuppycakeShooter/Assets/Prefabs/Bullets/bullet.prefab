@@ -25,7 +25,8 @@ GameObject:
   - component: {fileID: 54959401613829960}
   - component: {fileID: 114960797872902838}
   - component: {fileID: 114978485853753192}
-  - component: {fileID: 82241426030584984}
+  - component: {fileID: 82028624398014940}
+  - component: {fileID: 114977103758665096}
   m_Layer: 0
   m_Name: bullet
   m_TagString: Bullet
@@ -102,7 +103,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &82241426030584984
+--- !u!82 &82028624398014940
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -196,6 +197,17 @@ MonoBehaviour:
   cakeAmmo: 3
   beerAmmo: 1
   pigAmmo: 2
+--- !u!114 &114977103758665096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1734115631193328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60547ee594361614ebd5229bf71def31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114978485853753192
 MonoBehaviour:
   m_ObjectHideFlags: 1

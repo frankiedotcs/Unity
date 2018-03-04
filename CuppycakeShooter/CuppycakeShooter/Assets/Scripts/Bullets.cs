@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullets : MonoBehaviour {
+public class Bullets : MonoBehaviour
+{
 
     private Ammo ammo;
     private FireBullets bulletType;
     public Rigidbody cakeAmmo;
     public Rigidbody beerAmmo;
     public Rigidbody pigAmmo;
+    Gun bullets;
 
     [SerializeField]
     public AudioClip popping;
@@ -27,27 +29,21 @@ public class Bullets : MonoBehaviour {
 
     private void pickupCakeAmmo()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Quaternion rotation = Quaternion.LookRotation(ray.direction);
-        bulletType.bulletType = Instantiate(cakeAmmo, transform.position, rotation) as Rigidbody;
+        
         Debug.Log("A baker's dozen was added to your ammo!");
     }
 
     private void pickupBeerAmmo()
     {
 
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Quaternion rotation = Quaternion.LookRotation(ray.direction);
-        bulletType.bulletType = Instantiate(beerAmmo, transform.position, rotation) as Rigidbody;
-        Debug.Log("A six-pack was added to your ammo!");
         
+        Debug.Log("A six-pack was added to your ammo!");
+
     }
 
     private void pickupPigAmmo()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Quaternion rotation = Quaternion.LookRotation(ray.direction);
-        bulletType.bulletType = Instantiate(pigAmmo, transform.position, rotation) as Rigidbody;
+        
         Debug.Log("A pig was added to your ammo!");
     }
 
@@ -56,11 +52,11 @@ public class Bullets : MonoBehaviour {
         if (collider.gameObject.CompareTag("Target"))
         {
             GetComponent<AudioSource>().PlayOneShot(popping);
+
         }
+
     }
-
-
-        public void PickUpItem(int pickupType)
+    public void PickUpItem(int pickupType)
     {
         switch (pickupType)
         {

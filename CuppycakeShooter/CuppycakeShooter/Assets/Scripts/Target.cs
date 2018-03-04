@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class Target : MonoBehaviour {
     public GameObject pop;
+    [SerializeField]
+    public AudioClip popping;
 	// Use this for initialization
 	void Start () {
        
@@ -15,11 +17,29 @@ public class Target : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnTriggerEnter(Collider other)
-    {
-        Instantiate(pop, transform.position, transform.rotation);
-        Destroy(gameObject);
 
+    private void OnTriggerEnter(Collider collider)
+    {
+       
+            GetComponent<AudioSource>().PlayOneShot(popping);
+            Instantiate(pop, transform.position, transform.rotation);
+            Destroy(gameObject);
+        
     }
+    //void OnTriggerEnter(Collider collider)
+    //{
+
+    //    GetComponent<AudioSource>().PlayOneShot(popping);
+
+    //    if (collider.gameObject.GetComponent<Bullets>() != null
+    //      && collider.gameObject.tag == "Bullet")
+    //    {
+    //        Instantiate(pop, transform.position, transform.rotation);
+
+           
+    //    }
+    //    Destroy(gameObject);
+
+    //}
   
 }
